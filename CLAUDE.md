@@ -11,7 +11,7 @@
 4. **`orders`**: `id`, `session_id`, `table_number`, `items` (jsonb), `status`, `created_at`
 
 ## ⚠️ Important Note for Next.js App Router
-โปรเจกต์นี้ใช้ Next.js เวอร์ชันล่าสุด ค่า `params` ใน Dynamic Route (เช่น `app/order/[sessionId]/page.js`)
+โปรเจกต์นี้ใช้ Next.js เวอร์ชันล่าสุด ค่า `params` ใน Dynamic Route (เช่น `app/order/[tableNumber]/page.js`)
 เป็น **Promise** ต้อง unwrap ด้วย `use()` จาก React เสมอ:
 
 ```javascript
@@ -20,12 +20,12 @@ import { use } from 'react';
 
 export default function OrderPage({ params }) {
   const resolvedParams = use(params);
-  const sessionId = resolvedParams.sessionId;
+  const tableNumber = resolvedParams.tableNumber;
   // ...
 }
 ```
 
-(ใน Server Component ให้ใช้ `const { sessionId } = await params;` แทน)
+(ใน Server Component ให้ใช้ `const { tableNumber } = await params;` แทน)
 
 ## 🔐 Environment Variables
 - `NEXT_PUBLIC_SUPABASE_URL`
