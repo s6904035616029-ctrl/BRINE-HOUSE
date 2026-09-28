@@ -3,8 +3,8 @@
 import { use, useEffect, useState } from 'react';
 import { supabase } from '../../../lib/supabaseClient';
 
-const ADULT_PRICE = 289;
-const CHILD_PRICE = 145;
+const ADULT_PRICE = 799;
+const CHILD_PRICE = 699;
 const MAX_QTY_PER_ITEM = 5;
 const MAX_ITEMS_PER_ORDER = 10;
 
